@@ -13,3 +13,10 @@ app.use((req, res, next) => { // Request, Response, Next functions
         res.end('Not authorized'); // End the response with a message
     }
 });
+
+app.use((req, res) => {
+    res.writeHead(200, {'Content-Type': 'text/plain'}); // Set the response header
+    res.end('Hello World'); // End the response with a message
+});
+
+http.createServer(app).listen(3000); // Create a server and listen on port 3000
